@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ManpowerOverflow"
+run/main_scene="res://title_screen.tscn"
 config/icon="res://icon.png"
 
 [rendering]

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://grid.gd" type="Script" id=2]
+[ext_resource path="res://point.tscn" type="PackedScene" id=3]
 
 [node name="level_4" type="Node2D"]
 
@@ -9,3 +11,440 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 8, 8 )
 format = 1
 tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 1, 0, 65547, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 1, 0, 131083, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 0, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 0, 0, 196617, 0, 0, 196618, 1, 0, 196619, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 0, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 0, 0, 262153, 0, 0, 262154, 1, 0, 262155, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 0, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 0, 0, 327689, 0, 0, 327690, 1, 0, 327691, 1, 0, 393216, 1, 0, 393217, 1, 0, 393218, 0, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 0, 0, 393225, 0, 0, 393226, 1, 0, 393227, 1, 0, 458752, 1, 0, 458753, 1, 0, 458754, 0, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 0, 0, 458761, 0, 0, 458762, 1, 0, 458763, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 0, 0, 589829, 0, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0, 720907, 1, 0 )
+
+[node name="grid" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="point_1" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 4 )
+
+[node name="point_2" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 4 )
+
+[node name="point_3" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 4 )
+
+[node name="point_4" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 4 )
+
+[node name="point_5" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 4 )
+
+[node name="point_6" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 4 )
+
+[node name="point_7" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 4 )
+
+[node name="point_8" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 4 )
+
+[node name="point_9" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 4 )
+
+[node name="point_10" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 4 )
+
+[node name="point_11" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 4 )
+
+[node name="point_12" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 4 )
+
+[node name="point_13" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 12 )
+
+[node name="point_14" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 12 )
+
+[node name="point_15" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 12 )
+
+[node name="point_16" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 12 )
+
+[node name="point_17" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 12 )
+
+[node name="point_18" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 12 )
+
+[node name="point_19" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 12 )
+
+[node name="point_20" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 12 )
+
+[node name="point_21" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 12 )
+
+[node name="point_22" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 12 )
+
+[node name="point_23" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 12 )
+
+[node name="point_24" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 12 )
+
+[node name="point_25" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 20 )
+
+[node name="point_26" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 20 )
+
+[node name="point_27" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 20 )
+
+[node name="point_28" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 20 )
+
+[node name="point_29" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 20 )
+
+[node name="point_30" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 20 )
+
+[node name="point_31" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 20 )
+
+[node name="point_32" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 20 )
+
+[node name="point_33" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 20 )
+
+[node name="point_34" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 20 )
+
+[node name="point_35" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 20 )
+
+[node name="point_36" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 20 )
+
+[node name="point_37" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 28 )
+
+[node name="point_38" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 28 )
+
+[node name="point_39" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 28 )
+
+[node name="point_40" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 28 )
+
+[node name="point_41" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 28 )
+
+[node name="point_42" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 28 )
+
+[node name="point_43" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 28 )
+
+[node name="point_44" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 28 )
+
+[node name="point_45" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 28 )
+
+[node name="point_46" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 28 )
+
+[node name="point_47" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 28 )
+
+[node name="point_48" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 28 )
+
+[node name="point_49" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 36 )
+
+[node name="point_50" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 36 )
+
+[node name="point_51" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 36 )
+
+[node name="point_52" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 36 )
+
+[node name="point_53" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 36 )
+
+[node name="point_54" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 36 )
+
+[node name="point_55" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 36 )
+
+[node name="point_56" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 36 )
+
+[node name="point_57" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 36 )
+
+[node name="point_58" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 36 )
+
+[node name="point_59" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 36 )
+
+[node name="point_60" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 36 )
+
+[node name="point_61" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 44 )
+
+[node name="point_62" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 44 )
+
+[node name="point_63" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 44 )
+
+[node name="point_64" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 44 )
+
+[node name="point_65" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 44 )
+
+[node name="point_66" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 44 )
+
+[node name="point_67" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 44 )
+
+[node name="point_68" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 44 )
+
+[node name="point_69" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 44 )
+
+[node name="point_70" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 44 )
+
+[node name="point_71" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 44 )
+
+[node name="point_72" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 44 )
+
+[node name="point_73" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 52 )
+
+[node name="point_74" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 52 )
+
+[node name="point_75" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 52 )
+
+[node name="point_76" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 52 )
+
+[node name="point_77" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 52 )
+
+[node name="point_78" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 52 )
+
+[node name="point_79" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 52 )
+
+[node name="point_80" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 52 )
+
+[node name="point_81" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 52 )
+
+[node name="point_82" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 52 )
+
+[node name="point_83" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 52 )
+
+[node name="point_84" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 52 )
+
+[node name="point_85" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 60 )
+
+[node name="point_86" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 60 )
+
+[node name="point_87" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 60 )
+
+[node name="point_88" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 60 )
+
+[node name="point_89" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 60 )
+
+[node name="point_90" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 60 )
+
+[node name="point_91" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 60 )
+
+[node name="point_92" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 60 )
+
+[node name="point_93" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 60 )
+
+[node name="point_94" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 60 )
+
+[node name="point_95" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 60 )
+
+[node name="point_96" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 60 )
+
+[node name="point_97" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 68 )
+
+[node name="point_98" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 68 )
+
+[node name="point_99" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 68 )
+
+[node name="point_100" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 68 )
+
+[node name="point_101" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 68 )
+
+[node name="point_102" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 68 )
+
+[node name="point_103" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 68 )
+
+[node name="point_104" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 68 )
+
+[node name="point_105" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 68 )
+
+[node name="point_106" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 68 )
+
+[node name="point_107" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 68 )
+
+[node name="point_108" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 68 )
+
+[node name="point_109" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 76 )
+
+[node name="point_110" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 76 )
+
+[node name="point_111" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 76 )
+
+[node name="point_112" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 76 )
+
+[node name="point_113" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 76 )
+
+[node name="point_114" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 76 )
+
+[node name="point_115" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 76 )
+
+[node name="point_116" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 76 )
+
+[node name="point_117" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 76 )
+
+[node name="point_118" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 76 )
+
+[node name="point_119" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 76 )
+
+[node name="point_120" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 76 )
+
+[node name="point_121" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 84 )
+
+[node name="point_122" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 84 )
+
+[node name="point_123" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 84 )
+
+[node name="point_124" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 84 )
+
+[node name="point_125" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 84 )
+
+[node name="point_126" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 84 )
+
+[node name="point_127" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 84 )
+
+[node name="point_128" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 84 )
+
+[node name="point_129" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 84 )
+
+[node name="point_130" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 84 )
+
+[node name="point_131" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 84 )
+
+[node name="point_132" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 84 )
+
+[node name="point_133" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 4, 92 )
+
+[node name="point_134" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 12, 92 )
+
+[node name="point_135" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 20, 92 )
+
+[node name="point_136" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 28, 92 )
+
+[node name="point_137" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 36, 92 )
+
+[node name="point_138" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 44, 92 )
+
+[node name="point_139" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 52, 92 )
+
+[node name="point_140" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 60, 92 )
+
+[node name="point_141" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 68, 92 )
+
+[node name="point_142" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 76, 92 )
+
+[node name="point_143" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 84, 92 )
+
+[node name="point_144" parent="grid" instance=ExtResource( 3 )]
+position = Vector2( 92, 92 )
+
+[node name="agents" type="Node2D" parent="."]

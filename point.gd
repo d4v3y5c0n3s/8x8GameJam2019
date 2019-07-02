@@ -1,12 +1,16 @@
 extends Area2D
 
 var agents_touching_point = []#  an array that stores all agents touching the point
-var inaccessible = false
+var accessible = true
+
+func is_accessible():
+	return accessible
 
 #  related to the accessibility of this point
 func _on_point_body_entered(body):
 	#  when a body has entered, you know that it is the map
-	inaccessible = true
+	accessible = false
+	$dummy.show()
 
 #  related to enemies detecting agents
 func _on_point_area_entered(area):

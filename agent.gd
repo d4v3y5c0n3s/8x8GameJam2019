@@ -29,6 +29,13 @@ func _on_agent_area_entered(area):
 func twn_finished(obj, np_key):
 	set_position(end_point)
 	at_point = true
+	
+func move(target_point, output=null): # sets end_point for the agents (used in _process)
+	if output != null:
+		print(output)
+	end_point = target_point.get_position()
+	starting_point = self.get_position()
+	at_point = false
 
 func _process(delta):
 	#  for debugging purposes
@@ -40,30 +47,97 @@ func _process(delta):
 			for n in get_parent().get_parent().get_children():
 				if n.get_name() == "grid":#  gets the level's grid node
 					var nearby = n.check_nearby(self.get_position())#  get the 8 surrounding points from the grid (by calling check_nearby(point))
-					#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
-					if not nearby[4] == null and nearby[4].is_accessible():#  right
-						print("going right")
-						end_point = nearby[4].get_position()
-						starting_point = self.get_position()
-						at_point = false
-					elif not nearby[1] == null and nearby[1].is_accessible():#  top center
-						print("going top center")
-						end_point = nearby[1].get_position()
-						starting_point = self.get_position()
-						at_point = false
-					elif not nearby[3] == null and nearby[3].is_accessible():#  left
-						print("going left")
-						end_point = nearby[3].get_position()
-						starting_point = self.get_position()
-						at_point = false
-					elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
-						print("going backwards")
-						end_point = nearby[6].get_position()
-						starting_point = self.get_position()
-						at_point = false
-					else:
-						print("cannot find empty square")
-					break
+					match direction:
+						0: # left
+							#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
+							
+								
+							if not nearby[1] == null and nearby[1].is_accessible():#  top center
+								direction = 1
+								move(nearby[1], "going top center")
+								
+								
+							elif not nearby[3] == null and nearby[3].is_accessible():#  left
+								direction = 0
+								move(nearby[3], "going left")
+								
+							elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
+								direction = 3
+								move(nearby[6], "going backwards")
+								
+							elif not nearby[4] == null and nearby[4].is_accessible():#  right
+								direction = 2
+								move(nearby[4], "going right")
+								
+							else:
+								print("cannot find empty square")
+							break
+						1: # up
+							#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
+							if not nearby[4] == null and nearby[4].is_accessible():#  right
+								direction = 2
+								move(nearby[4], "going right")
+								
+							elif not nearby[1] == null and nearby[1].is_accessible():#  top center
+								direction = 1
+								move(nearby[1], "going top center")
+								
+								
+							elif not nearby[3] == null and nearby[3].is_accessible():#  left
+								direction = 0
+								move(nearby[3], "going left")
+								
+							elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
+								direction = 3
+								move(nearby[6], "going backwards")
+								
+							else:
+								print("cannot find empty square")
+							break
+						2: # right
+							#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
+							if not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
+								direction = 3
+								move(nearby[6], "going backwards")
+							
+							elif not nearby[4] == null and nearby[4].is_accessible():#  right
+								direction = 2
+								move(nearby[4], "going right")
+								
+							elif not nearby[1] == null and nearby[1].is_accessible():#  top center
+								direction = 1
+								move(nearby[1], "going top center")
+								
+								
+							elif not nearby[3] == null and nearby[3].is_accessible():#  left
+								direction = 0
+								move(nearby[3], "going left")
+							
+								
+							else:
+								print("cannot find empty square")
+							break
+						3: # down
+							#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
+							if not nearby[3] == null and nearby[3].is_accessible():#  left
+								direction = 0
+								move(nearby[3], "going left")
+								
+							elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
+								direction = 3
+								move(nearby[6], "going backwards")
+							
+							elif not nearby[4] == null and nearby[4].is_accessible():#  right
+								direction = 2
+								move(nearby[4], "going right")
+								
+							elif not nearby[1] == null and nearby[1].is_accessible():#  top center
+								direction = 1
+								move(nearby[1], "going top center")
+
+							else:
+								print("cannot find empty square")
+							break
 		false:#  agent hasn't arrived at a point yet, continue moving towards it
 			tween_node.interpolate_property(self, "position", starting_point, end_point, WALK_SPEED, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			tween_node.start()

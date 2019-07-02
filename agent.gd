@@ -1,6 +1,6 @@
 extends Area2D
 
-const WALK_SPEED = 1
+const WALK_SPEED = 1.0
 
 onready var tween_node = $twn#  reference to the tween node
 
@@ -17,6 +17,27 @@ func _ready():
 func _process(delta):
 	match at_point:
 		true:#  agent is at point, start moving towards another point
-			pass
+			for n in get_parent().get_children():
+				if n.get_name() == "grid":#  gets the level's grid node
+					var nearby = n.check_nearby(self.position)#  get the 8 surrounding points from the grid (by calling check_nearby(point))
+					#  check which of the area2ds are open
+					if nearby[]:
+						
+					elif nearby[]:
+						
+					elif nearby[]:
+						
+					elif nearby[]:
+						
+					break
+			
+			#  determine which direction to begin moving in, set end_point
+			starting_point = self.position
+			at_point = false
 		false:#  agent hasn't arrived at a point yet, continue moving towards it
-			pass
+			#  check if the agent is at a point, if so, set at_point = true
+			if not self.position == end_point:
+				at_point = true
+			else:
+				#  otherwise, continue moving towards the already chosen point
+				tween_node.interpolate_property(self, "transform/position", starting_point, end_point, WALK_SPEED, Tween.TRANS_LINEAR, Tween.EASE_IN)

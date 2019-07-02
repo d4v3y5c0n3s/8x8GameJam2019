@@ -35,8 +35,6 @@ func _process(delta):
 	if previous_end_point != end_point:
 		previous_end_point = end_point
 		print(end_point)
-	if starting_point == end_point:
-		pass
 	match at_point:
 		true:#  agent is at point, start moving towards another point
 			for n in get_parent().get_parent().get_children():

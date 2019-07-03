@@ -68,9 +68,6 @@ func _process(delta):
 							elif not nearby[4] == null and nearby[4].is_accessible():#  right
 								direction = 2
 								move(nearby[4], "going right")
-								
-							else:
-								print("cannot find empty square")
 							break
 						1: # up
 							#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
@@ -90,9 +87,6 @@ func _process(delta):
 							elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
 								direction = 3
 								move(nearby[6], "going backwards")
-								
-							else:
-								print("cannot find empty square")
 							break
 						2: # right
 							#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
@@ -112,10 +106,6 @@ func _process(delta):
 							elif not nearby[3] == null and nearby[3].is_accessible():#  left
 								direction = 0
 								move(nearby[3], "going left")
-							
-								
-							else:
-								print("cannot find empty square")
 							break
 						3: # down
 							#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
@@ -134,9 +124,6 @@ func _process(delta):
 							elif not nearby[1] == null and nearby[1].is_accessible():#  top center
 								direction = 1
 								move(nearby[1], "going top center")
-
-							else:
-								print("cannot find empty square")
 							break
 		false:#  agent hasn't arrived at a point yet, continue moving towards it
 			tween_node.interpolate_property(self, "position", starting_point, end_point, WALK_SPEED, Tween.TRANS_LINEAR, Tween.EASE_IN)

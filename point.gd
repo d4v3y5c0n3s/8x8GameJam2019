@@ -10,7 +10,6 @@ func is_accessible():
 func _on_point_body_entered(body):
 	#  when a body has entered, you know that it is the map
 	accessible = false
-	$dummy.show()
 
 #  related to enemies detecting agents
 func _on_point_area_entered(area):

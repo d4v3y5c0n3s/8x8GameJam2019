@@ -11,7 +11,7 @@ var at_point = false#  used to trigger logic related to to arriving at points
 var starting_point = Vector2()#  this and end_point are used to move and determine
 var end_point = Vector2()#  when the enemy needs to check if it should change direction
 var finished_spawn = false
-var previous_end_point = Vector2()
+#var previous_end_point = Vector2()
 
 func _ready():
 	set_process(false)
@@ -29,19 +29,21 @@ func _on_enemy_area_entered(area):
 func twn_finished(obj, np_key):
 	set_position(end_point)
 	at_point = true
-	
-func move(target_point, output=null): # sets end_point for the agents (used in _process)
+	tween_node.stop_all()
+
+func move(target_point, output=null): # sets end_point for the enemys (used in _process)
 	if output != null:
-		print(output)
+		#print(output)
+		pass
 	end_point = target_point.get_position()
 	starting_point = self.get_position()
 	at_point = false
 
-func _process(delta):
+func _physics_process(delta):
 	#  for debugging purposes
-	if previous_end_point != end_point:
-		previous_end_point = end_point
-		print(end_point)
+#	if previous_end_point != end_point:
+#		previous_end_point = end_point
+#		#print(end_point)
 	match at_point:
 		true:#  enemy is at point, start moving towards another point
 			for n in get_parent().get_parent().get_children():

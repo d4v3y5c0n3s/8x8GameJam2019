@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://grid.gd" type="Script" id=2]
 [ext_resource path="res://point.tscn" type="PackedScene" id=3]
-[ext_resource path="res://agent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://agents.gd" type="Script" id=4]
+[ext_resource path="res://agent.tscn" type="PackedScene" id=5]
 
 [node name="level_1" type="Node2D"]
 
@@ -485,7 +486,10 @@ position = Vector2( 84, 100 )
 [node name="point_156" parent="grid" instance=ExtResource( 3 )]
 position = Vector2( 92, 100 )
 
-[node name="agents" type="Node2D" parent="."]
+[node name="enemies" type="Node2D" parent="."]
 
-[node name="agent" parent="agents" instance=ExtResource( 4 )]
+[node name="agents" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="agent" parent="agents" instance=ExtResource( 5 )]
 position = Vector2( 36, 84 )

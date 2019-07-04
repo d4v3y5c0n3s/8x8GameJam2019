@@ -17,12 +17,21 @@ _global_script_class_icons={
 
 config/name="ManpowerOverthrow"
 run/main_scene="res://title_screen.tscn"
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
+boot_splash/bg_color=Color( 0.894118, 0.768627, 0.396078, 1 )
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=100
+window/size/height=100
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [rendering]
 
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.894118, 0.768627, 0.396078, 1 )
 environment/default_environment="res://default_env.tres"

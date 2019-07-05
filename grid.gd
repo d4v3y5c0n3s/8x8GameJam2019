@@ -60,85 +60,90 @@ func check_ahead(direction, point):#  0 = left, 1 = up, 2 = right, 3 = down
 		0:#  left
 			for p in grid:
 				if p.position.y == point.y and p.position.x != point.x and not p.position.x > point.x:#  ensures that the only points returned are from the left of the point
-					if p.is_accessible():
-						line_of_points.append(p)
-						
-						#  lights up the point for the frame
-						p.light_up = true
+					line_of_points.append(p)
 			
 			#  before returning line_of_points, remove all points which go through walls
-			line_of_points.sort_custom(, "sort")#  here, you are looking for the highest x-value
+			line_of_points.sort_custom(los_filter_highest_x, "sort")#  here, you are looking for the highest x-value
+			var hit_wall = false
+			for l in line_of_points:
+				if not hit_wall and not l.is_accessible():
+					hit_wall = true
+				elif not hit_wall:
+					l.light_up = true#  lights up the point for the frame
+				
+				if hit_wall:
+					line_of_points.erase(l)
 			
 		2:#  right
 			for p in grid:
 				if p.position.y == point.y and p.position.x != point.x and not p.position.x < point.x:#  
-					if p.is_accessible():
-						line_of_points.append(p)
-						
-						#  lights up the point for the frame
-						p.light_up = true
+					line_of_points.append(p)
 			
 			#  before returning line_of_points, remove all points which go through walls
-			line_of_points.sort_custom(, "sort")#  here, you are looking for the the lowest x-value
+			line_of_points.sort_custom(los_filter_lowest_x, "sort")#  here, you are looking for the the lowest x-value
+			var hit_wall = false
+			for l in line_of_points:
+				if not hit_wall and not l.is_accessible():
+					hit_wall = true
+				elif not hit_wall:
+					l.light_up = true#  lights up the point for the frame
+				
+				if hit_wall:
+					line_of_points.erase(l)
 			
 		1:#  up
 			for p in grid:
 				if p.position.x == point.x and p.position.y != point.y and not p.position.y < point.y:#  
-					if p.is_accessible():
-						line_of_points.append(p)
-						
-						#  lights up the point for the frame
-						p.light_up = true
+					line_of_points.append(p)
 			
 			#  before returning line_of_points, remove all points which go through walls
-			line_of_points.sort_custom(, "sort")#  here, you are looking for the highest y-value
+			line_of_points.sort_custom(los_filter_lowest_y, "sort")#  here, you are looking for the highest y-value
+			var hit_wall = false
+			for l in line_of_points:
+				if not hit_wall and not l.is_accessible():
+					hit_wall = true
+				elif not hit_wall:
+					l.light_up = true#  lights up the point for the frame
+				
+				if hit_wall:
+					line_of_points.erase(l)
 			
 		3:#  down
 			for p in grid:
 				if p.position.x == point.x and p.position.y != point.y and not p.position.y > point.y:#  
-					if p.is_accessible():
-						line_of_points.append(p)
-						
-						#  lights up the point for the frame
-						p.light_up = true
+					line_of_points.append(p)
 			
 			#  before returning line_of_points, remove all points which go through walls
-			line_of_points.sort_custom(, "sort")#  here, you are looking for the lowest y-value
+			line_of_points.sort_custom(los_filter_highest_y, "sort")#  here, you are looking for the lowest y-value
+			var hit_wall = false
+			for l in line_of_points:
+				if not hit_wall and not l.is_accessible():
+					hit_wall = true
+				elif not hit_wall:
+					l.light_up = true#  lights up the point for the frame
+				
+				if hit_wall:
+					line_of_points.erase(l)
 	
 	return line_of_points
 
-class los_filter_highest:
+class los_filter_highest_x:
 	static func sort(a, b):
-		if a > b:
+		if a.position.x > b.position.x:
 			return true
 		return false
-class los_filter_lowest:
+class los_filter_lowest_x:
 	static func sort(a, b):
-		if a < b:
+		if a.position.x < b.position.x:
 			return true
 		return false
-
-##  used in the above "check_ahead()" function
-#func rec_line_of_sight(starting_point, points, dir):
-#
-#	var filtered_los = []#  the filters line of sight
-#
-#	match dir:
-#		0:#  left
-#			#  here, you are looking for the highest x-value
-#			for l in points:
-#
-#		2:#  right
-#			#  here, you are looking for the the lowest x-value
-#			for l in points:
-#
-#		1:#  up
-#			#  here, you are looking for the highest y-value
-#			for l in points:
-#
-#		3:#  down
-#			#  here, you are looking for the lowest y-value
-#			for l in points:
-#
-#
-#	return filtered_los
+class los_filter_lowest_y:
+	static func sort(a, b):
+		if a.position.y < b.position.y:
+			return true
+		return false
+class los_filter_highest_y:
+	static func sort(a, b):
+		if a.position.y > b.position.y:
+			return true
+		return false

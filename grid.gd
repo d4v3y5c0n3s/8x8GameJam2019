@@ -91,7 +91,7 @@ func check_ahead(direction, point):#  0 = left, 1 = up, 2 = right, 3 = down
 				if hit_wall:
 					line_of_points.erase(l)
 			
-		1:#  up
+		3:#  up
 			for p in grid:
 				if p.position.x == point.x and p.position.y != point.y and not p.position.y < point.y:#  
 					line_of_points.append(p)
@@ -108,7 +108,7 @@ func check_ahead(direction, point):#  0 = left, 1 = up, 2 = right, 3 = down
 				if hit_wall:
 					line_of_points.erase(l)
 			
-		3:#  down
+		1:#  down
 			for p in grid:
 				if p.position.x == point.x and p.position.y != point.y and not p.position.y > point.y:#  
 					line_of_points.append(p)

@@ -62,88 +62,92 @@ func _physics_process(delta):
 			print("agents are visible")
 			p.agents_touching_point[0].alive = false
 	
-	match at_point:
-		true:#  enemy is at point, start moving towards another point
-			var nearby = grid.check_nearby(self.get_position())#  get the 8 surrounding points from the grid (by calling check_nearby(point))
-			match direction:
-				0: # left
-					#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
-					
-					if not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
-						direction = 3
-						move(nearby[6], "going backwards")
+	if alive:
+		match at_point:
+			true:#  enemy is at point, start moving towards another point
+				var nearby = grid.check_nearby(self.get_position())#  get the 8 surrounding points from the grid (by calling check_nearby(point))
+				match direction:
+					0: # left
+						#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
 						
-					elif not nearby[3] == null and nearby[3].is_accessible():#  left
-						direction = 0
-						move(nearby[3], "going left")
+						if not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
+							direction = 3
+							move(nearby[6], "going backwards")
+							
+						elif not nearby[3] == null and nearby[3].is_accessible():#  left
+							direction = 0
+							move(nearby[3], "going left")
+							
+						elif not nearby[1] == null and nearby[1].is_accessible():#  top center
+							direction = 1
+							move(nearby[1], "going top center")
+							
+						elif not nearby[4] == null and nearby[4].is_accessible():#  right
+							direction = 2
+							move(nearby[4], "going right")
+							
 						
-					elif not nearby[1] == null and nearby[1].is_accessible():#  top center
-						direction = 1
-						move(nearby[1], "going top center")
+					1: # up
+						#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
+						if not nearby[3] == null and nearby[3].is_accessible():#  left
+							direction = 0
+							move(nearby[3], "going left")
+							
+						elif not nearby[1] == null and nearby[1].is_accessible():#  top center
+							direction = 1
+							move(nearby[1], "going top center")
+							
+						elif not nearby[4] == null and nearby[4].is_accessible():#  right
+							direction = 2
+							move(nearby[4], "going right")
+							
+						elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
+							direction = 3
+							move(nearby[6], "going backwards")
+							
 						
-					elif not nearby[4] == null and nearby[4].is_accessible():#  right
-						direction = 2
-						move(nearby[4], "going right")
+					2: # right
+						#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
 						
-					
-				1: # up
-					#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
-					if not nearby[3] == null and nearby[3].is_accessible():#  left
-						direction = 0
-						move(nearby[3], "going left")
+						if not nearby[1] == null and nearby[1].is_accessible():#  top center
+							direction = 1
+							move(nearby[1], "going top center")
+							
+						elif not nearby[4] == null and nearby[4].is_accessible():#  right
+							direction = 2
+							move(nearby[4], "going right")
+							
+						elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
+							direction = 3
+							move(nearby[6], "going backwards")
+							
+						elif  not nearby[3] == null and nearby[3].is_accessible():#  left
+							direction = 0
+							move(nearby[3], "going left")
+							
 						
-					elif not nearby[1] == null and nearby[1].is_accessible():#  top center
-						direction = 1
-						move(nearby[1], "going top center")
+					3: # down
+						#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
+						if not nearby[4] == null and nearby[4].is_accessible():#  right
+							direction = 2
+							move(nearby[4], "going right")
+							
+						elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
+							direction = 3
+							move(nearby[6], "going backwards")
+							
+						elif not nearby[3] == null and nearby[3].is_accessible():#  left
+							direction = 0
+							move(nearby[3], "going left")
+							
+						elif not nearby[1] == null and nearby[1].is_accessible():#  top center
+							direction = 1
+							move(nearby[1], "going top center")
+							
 						
-					elif not nearby[4] == null and nearby[4].is_accessible():#  right
-						direction = 2
-						move(nearby[4], "going right")
-						
-					elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
-						direction = 3
-						move(nearby[6], "going backwards")
-						
-					
-				2: # right
-					#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
-					
-					if not nearby[1] == null and nearby[1].is_accessible():#  top center
-						direction = 1
-						move(nearby[1], "going top center")
-						
-					elif not nearby[4] == null and nearby[4].is_accessible():#  right
-						direction = 2
-						move(nearby[4], "going right")
-						
-					elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
-						direction = 3
-						move(nearby[6], "going backwards")
-						
-					elif  not nearby[3] == null and nearby[3].is_accessible():#  left
-						direction = 0
-						move(nearby[3], "going left")
-						
-					
-				3: # down
-					#  check which of the area2ds are open, ordered by which direction they first prioritize in order to determine which direction to begin moving in, then set end_point
-					if not nearby[4] == null and nearby[4].is_accessible():#  right
-						direction = 2
-						move(nearby[4], "going right")
-						
-					elif not nearby[6] == null and nearby[6].is_accessible():#  bottom center, aka, they turn around
-						direction = 3
-						move(nearby[6], "going backwards")
-						
-					elif not nearby[3] == null and nearby[3].is_accessible():#  left
-						direction = 0
-						move(nearby[3], "going left")
-						
-					elif not nearby[1] == null and nearby[1].is_accessible():#  top center
-						direction = 1
-						move(nearby[1], "going top center")
-						
-					
-		false:#  enemy hasn't arrived at a point yet, continue moving towards it
-			tween_node.interpolate_property(self, "position", starting_point, end_point, WALK_SPEED, Tween.TRANS_LINEAR, Tween.EASE_IN)
-			tween_node.start()
+			false:#  enemy hasn't arrived at a point yet, continue moving towards it
+				tween_node.interpolate_property(self, "position", starting_point, end_point, WALK_SPEED, Tween.TRANS_LINEAR, Tween.EASE_IN)
+				tween_node.start()
+	else:
+		#  logic related to the enemy being dead
+		$anim.stop()

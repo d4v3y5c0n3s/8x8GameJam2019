@@ -14,6 +14,7 @@ var finished_spawn = false
 #var previous_end_point = Vector2()
 
 func _ready():
+	$anim.play("walk")
 	set_process(false)
 	$twn.connect("tween_completed", self, "twn_finished")
 
@@ -44,6 +45,11 @@ func _physics_process(delta):
 #	if previous_end_point != end_point:
 #		previous_end_point = end_point
 #		#print(end_point)
+	
+	#  checks if the agent is dead
+	if not alive:
+		print("agent is dead")
+	
 	match at_point:
 		true:#  agent is at point, start moving towards another point
 			for n in get_parent().get_parent().get_children():

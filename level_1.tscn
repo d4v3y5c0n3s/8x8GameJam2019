@@ -3,8 +3,8 @@
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://grid.gd" type="Script" id=2]
 [ext_resource path="res://point.tscn" type="PackedScene" id=3]
-[ext_resource path="res://agents.gd" type="Script" id=4]
-[ext_resource path="res://agent.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://agents.gd" type="Script" id=5]
 
 [node name="level_1" type="Node2D"]
 
@@ -488,8 +488,11 @@ position = Vector2( 92, 100 )
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="agents" type="Node2D" parent="."]
-script = ExtResource( 4 )
+[node name="enemy1" parent="enemies" instance=ExtResource( 4 )]
+position = Vector2( 60, 28 )
 
-[node name="agent" parent="agents" instance=ExtResource( 5 )]
+[node name="agents" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="agent_spawnpoint" type="Position2D" parent="."]
 position = Vector2( 36, 84 )

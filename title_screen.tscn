@@ -11,9 +11,10 @@ position = Vector2( 49.2879, 39.647 )
 texture = ExtResource( 2 )
 
 [node name="press_start" type="Label" parent="."]
-margin_left = 14.4982
-margin_top = 85.5618
-margin_right = 144.498
-margin_bottom = 99.5618
-rect_scale = Vector2( 0.549919, 0.698597 )
+margin_left = 2.30631
+margin_top = 82.6357
+margin_right = 132.306
+margin_bottom = 96.6357
+rect_scale = Vector2( 0.743158, 0.955363 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Press Enter or Space"

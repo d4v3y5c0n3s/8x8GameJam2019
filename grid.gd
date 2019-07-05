@@ -58,19 +58,31 @@ func check_ahead(direction, point):#  0 = left, 1 = up, 2 = right, 3 = down
 	
 	if direction == 0:#  left
 		for p in grid:
-			if p.y == point.y and p.x != point.x and not p.x > point.x:#  ensures that the only points returned are from the left of the point
+			if p.position.y == point.y and p.position.x != point.x and not p.position.x > point.x:#  ensures that the only points returned are from the left of the point
 				line_of_points.append(p)
+				
+				#  lights up the point for the frame
+				p.light_up = true
 	elif direction == 2:#  right
 		for p in grid:
-			if p.y == point.y and p.x != point.x and not p.x < point.x:#  
+			if p.position.y == point.y and p.position.x != point.x and not p.position.x < point.x:#  
 				line_of_points.append(p)
+				
+				#  lights up the point for the frame
+				p.light_up = true
 	elif direction == 1:#  up
 		for p in grid:
-			if p.x == point.x and p.y != point.y and not p.y < point.y:#  
+			if p.position.x == point.x and p.position.y != point.y and not p.position.y < point.y:#  
 				line_of_points.append(p)
+				
+				#  lights up the point for the frame
+				p.light_up = true
 	elif direction == 3:#  down
 		for p in grid:
-			if p.x == point.x and p.y != point.y and not p.y > point.y:#  
+			if p.position.x == point.x and p.position.y != point.y and not p.position.y > point.y:#  
 				line_of_points.append(p)
+				
+				#  lights up the point for the frame
+				p.light_up = true
 	
 	return line_of_points

@@ -52,6 +52,10 @@ func _physics_process(delta):
 #		previous_end_point = end_point
 #		#print(end_point)
 	
+	#  checks if this enemy has been killed
+	if not alive:
+		print("enemy is dead")
+	
 	#  scan for agents and kill any within view
 	for p in grid.check_ahead(direction, self.get_position()):
 		if p.agents_touching_point != []:

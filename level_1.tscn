@@ -496,3 +496,7 @@ script = ExtResource( 5 )
 
 [node name="agent_spawnpoint" type="Position2D" parent="."]
 position = Vector2( 36, 84 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 48, 52 )
+current = true

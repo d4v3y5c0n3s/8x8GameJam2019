@@ -25,6 +25,10 @@ func _on_agent_area_entered(area):
 		finished_spawn = true
 		self.set_position(area.get_position())
 		set_process(true)
+	
+	#  check if touching an enemy, if so, kill the enemy
+	if area.get_parent().name == "enemies":
+		area.alive = false
 
 #  used to ensure that the tween brings the agent to exactly where it need to be
 func twn_finished(obj, np_key):

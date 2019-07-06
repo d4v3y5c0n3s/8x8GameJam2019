@@ -14,15 +14,4 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = -4.0
-margin_top = -4.0
-margin_right = 36.0
-margin_bottom = 10.0
-rect_scale = Vector2( 0.51416, 0.699876 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0"
-
-[node name="agents_needed_to_win" type="Position2D" parent="."]
 [connection signal="area_entered" from="." to="." method="_on_goal_area_entered"]

@@ -135,4 +135,4 @@ func _physics_process(delta):
 				tween_node.start()
 	else:
 		#  logic related to death
-		pass
+		get_parent().game_lose = true

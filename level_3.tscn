@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://grid.gd" type="Script" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sprites/entrance.png" type="Texture" id=6]
 [ext_resource path="res://goal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://lose.tscn" type="PackedScene" id=8]
+[ext_resource path="res://win.tscn" type="PackedScene" id=9]
+[ext_resource path="res://MOTHEME.wav" type="AudioStream" id=10]
 
 [node name="level_3" type="Node2D"]
 
@@ -523,3 +526,19 @@ current = true
 
 [node name="goal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 36, 20 )
+
+[node name="lose" parent="." instance=ExtResource( 8 )]
+margin_left = 20.0
+margin_top = 40.0
+margin_right = 60.0
+margin_bottom = 80.0
+
+[node name="win" parent="." instance=ExtResource( 9 )]
+margin_left = 20.0
+margin_top = 40.0
+margin_right = 60.0
+margin_bottom = 80.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true

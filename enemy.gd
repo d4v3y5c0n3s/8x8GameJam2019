@@ -51,7 +51,7 @@ func _physics_process(delta):
 	if alive:
 	#  scan for agents and kill any within view
 		for p in grid.check_ahead(direction, self.get_position()):
-			if p.agents_touching_point != [] and p.accessible:
+			if p.agents_touching_point != [] and p.accessible and p.light_up:
 				print("agents are visible")
 				p.agents_touching_point[0].alive = false
 		

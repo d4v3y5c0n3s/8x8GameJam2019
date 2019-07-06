@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://lose.gd" type="Script" id=1]
+
+[node name="lose" type="Panel"]
+visible = false
+margin_left = 28.0
+margin_top = 32.0
+margin_right = 68.0
+margin_bottom = 72.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.704161, 0.98852 )
+text = "You Lose"
+
+[node name="Button" type="Button" parent="."]
+margin_top = 24.0
+margin_right = 54.0
+margin_bottom = 44.0
+rect_scale = Vector2( 0.724609, 0.714106 )
+text = "restart"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

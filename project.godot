@@ -25,6 +25,7 @@ config/icon="res://icon.png"
 window/size/width=100
 window/size/height=100
 window/size/resizable=false
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

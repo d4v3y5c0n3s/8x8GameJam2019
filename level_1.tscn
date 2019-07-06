@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://grid.gd" type="Script" id=2]
 [ext_resource path="res://point.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://agents.gd" type="Script" id=5]
+[ext_resource path="res://sprites/entrance.png" type="Texture" id=6]
 
 [node name="level_1" type="Node2D"]
 
@@ -496,6 +497,9 @@ script = ExtResource( 5 )
 
 [node name="agent_spawnpoint" type="Position2D" parent="."]
 position = Vector2( 36, 84 )
+
+[node name="Sprite" type="Sprite" parent="agent_spawnpoint"]
+texture = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 48, 52 )

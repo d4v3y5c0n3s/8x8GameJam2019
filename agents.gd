@@ -8,6 +8,11 @@ func _ready():
 	pass
 
 func _process(delta):
+	
+	#  get player input and handle it appropriately
+	if Input.is_action_pressed("ui_select"):
+		
+	
 	if delta_time >= spawn_rate:#  when delta time adds up to the spawn_rate (1.0 = 1 second), spawns another agent
 		delta_time = delta
 		print("!")

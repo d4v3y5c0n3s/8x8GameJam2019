@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://grid.gd" type="Script" id=2]
 [ext_resource path="res://point.tscn" type="PackedScene" id=3]
 [ext_resource path="res://agents.gd" type="Script" id=4]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/entrance.png" type="Texture" id=6]
 
 [node name="level_4" type="Node2D"]
 __meta__ = {
@@ -457,6 +458,7 @@ position = Vector2( 92, 92 )
 script = ExtResource( 4 )
 
 [node name="enemies" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="enemy1" parent="enemies" instance=ExtResource( 5 )]
 position = Vector2( 20, 44 )
@@ -465,12 +467,16 @@ position = Vector2( 20, 44 )
 position = Vector2( 44, 20 )
 
 [node name="enemy3" parent="enemies" instance=ExtResource( 5 )]
-position = Vector2( 68, 44 )
+position = Vector2( 68, 68 )
 
 [node name="enemy4" parent="enemies" instance=ExtResource( 5 )]
-position = Vector2( 44, 68 )
+position = Vector2( 52, 68 )
 
 [node name="agent_spawnpoint" type="Position2D" parent="."]
+position = Vector2( 44, 76 )
+
+[node name="Sprite" type="Sprite" parent="agent_spawnpoint"]
+texture = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 48, 48 )

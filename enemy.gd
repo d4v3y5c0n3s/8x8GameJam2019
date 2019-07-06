@@ -47,22 +47,14 @@ func move(target_point, output=null): # sets end_point for the enemys (used in _
 	at_point = false
 
 func _physics_process(delta):
-	#  for debugging purposes
-#	if previous_end_point != end_point:
-#		previous_end_point = end_point
-#		#print(end_point)
-	
-	#  checks if this enemy has been killed
-	if not alive:
-		print("enemy is dead")
-	
-	#  scan for agents and kill any within view
-	for p in grid.check_ahead(direction, self.get_position()):
-		if p.agents_touching_point != []:
-			print("agents are visible")
-			p.agents_touching_point[0].alive = false
 	
 	if alive:
+	#  scan for agents and kill any within view
+		for p in grid.check_ahead(direction, self.get_position()):
+			if p.agents_touching_point != [] and p.accessible:
+				print("agents are visible")
+				p.agents_touching_point[0].alive = false
+		
 		match at_point:
 			true:#  enemy is at point, start moving towards another point
 				var nearby = grid.check_nearby(self.get_position())#  get the 8 surrounding points from the grid (by calling check_nearby(point))
@@ -151,3 +143,4 @@ func _physics_process(delta):
 	else:
 		#  logic related to the enemy being dead
 		$anim.stop()
+		self.set_scale(Vector2(1, -1))

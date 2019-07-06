@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://grid.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://agents.gd" type="Script" id=4]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sprites/entrance.png" type="Texture" id=6]
+[ext_resource path="res://goal.tscn" type="PackedScene" id=7]
 
 [node name="level_2" type="Node2D"]
 
@@ -435,3 +436,6 @@ texture = ExtResource( 6 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 44, 48 )
 current = true
+
+[node name="goal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 28, 76 )
